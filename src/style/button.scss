@@ -1,0 +1,51 @@
+$arrow-height: 20px;
+$arrow-width: 10px;
+$arrow-margin: 10px;
+
+button {
+  background: rgba($color-white, .7);
+  border: 2px solid $color-primary;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  margin: 0;
+  padding: $arrow-margin $arrow-margin + (($arrow-height - $arrow-width) / 2);
+  position: absolute;
+  top: 50%;
+  transition: opacity .5s ease-in-out;
+  z-index: 1;
+
+  @include breakpoint($medium-breakpoint) {
+    display: block;
+  }
+
+  &:focus {
+    box-shadow: rgba($color-black, .5) 0 0 2px 2px;
+    outline: 0;
+  }
+
+  &::after {
+    border-color: transparent $color-primary transparent transparent;
+    border-style: solid;
+    border-width: $arrow-height / 2 $arrow-width $arrow-height / 2 0;
+    content: '';
+    display: block;
+    margin-left: -1px;
+    margin-right: 1px;
+  }
+
+  &.prev {
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  &.next {
+    right: 0;
+    transform: translate(50%, -50%) rotate(180deg);
+  }
+
+  &.inactive {
+    cursor: auto;
+    opacity: .1;
+  }
+}

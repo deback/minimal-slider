@@ -1,0 +1,13 @@
+{
+  "extends": ["standard"],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "globals": {
+  },
+  "rules": {
+    "no-color-literals": 1
+  }
+}

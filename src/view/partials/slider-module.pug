@@ -1,0 +1,12 @@
+.slider-module.with-3-visible-items(data-step='3')
+  button.prev
+  button.next
+  .hide-scrollbar
+    .slidable
+      - var n = 0
+      while n < 20
+        - n++
+        - var image = 'https://picsum.photos/350/' + parseInt(Math.random() * 150 + 250 + '/?random')
+        .item
+          img(src=image)
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

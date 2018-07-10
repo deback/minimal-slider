@@ -1,0 +1,16 @@
+@import '../../node_modules/sanitize.css';
+@import '../../node_modules/breakpoint-sass/stylesheets/breakpoint';
+@import 'breakpoints';
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  margin: .5rem auto;
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+@import 'colors';
+@import 'button';
+@import 'slider-module';
+@import 'headline';

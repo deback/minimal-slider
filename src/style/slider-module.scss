@@ -1,0 +1,64 @@
+$item-spacing: .5rem;
+
+.slider-module {
+  position: relative;
+
+  .slidable {
+    font-size: 0; // fix for space between inline-elemnts
+    margin-bottom: -30px; // hide scrollbar on mobile
+    overflow-x: scroll;
+    padding: 0 $item-spacing * 1.5;
+    padding-bottom: 30px;
+    transition: transform .5s ease-in-out;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+
+    @include breakpoint($medium-breakpoint) {
+      overflow-x: initial;
+      padding: 0;
+    }
+
+    .item {
+      display: inline-block;
+      font-size: 1rem;
+      margin: 0;
+      padding: 0 $item-spacing / 2;
+      vertical-align: top;
+      white-space: normal;
+      width: 100%;
+    }
+
+    img {
+      border: 0;
+      display: inline;
+      height: auto;
+      vertical-align: top;
+      width: 100%;
+    }
+
+    p {
+      width: 100%;
+    }
+  }
+
+  .hide-scrollbar {
+    margin: 0 (-$item-spacing * 2);
+    overflow: hidden;
+
+    @include breakpoint($medium-breakpoint) {
+      margin: 0 (-$item-spacing / 2);
+    }
+  }
+
+  @for $items from 2 through 10 {
+    &.with-#{$items}-visible-items {
+      .item {
+        width: 50%;
+
+        @include breakpoint($medium-breakpoint) {
+          width: percentage(1 / $items);
+        }
+      }
+    }
+  }
+}
